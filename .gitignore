@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local env / secrets
+.env
+.env.*
+
+# Cloudflare / Wrangler local state
+.wrangler/
+
+# Claude Code local settings
+.claude/settings.local.json

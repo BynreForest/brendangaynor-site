@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Thinktrace — Brendan Gaynor</title>
+  <meta name="description" content="Thinktrace is an iOS voice-notes app: record voice memos, then ask questions about their content.">
+  <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body style="--accent: #8b6cf6">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="topbar container" aria-label="Breadcrumb">
+    <a class="back-link" href="../index.html">
+      <svg width="9" height="16" viewBox="0 0 9 16" aria-hidden="true"><path d="M8 1L1 8l7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All apps
+    </a>
+  </nav>
+
+  <main id="main" class="container">
+    <header class="app-hero">
+      <span class="app-icon app-icon--lg" data-initial="T">
+        <img src="../assets/icons/thinktrace.png" alt="Thinktrace app icon" width="140" height="140" onerror="this.parentElement.classList.add('app-icon--missing')">
+      </span>
+      <div>
+        <h1 class="app-hero__name">Thinktrace</h1>
+        <p class="app-hero__tagline">Record voice memos, then ask questions about them.</p>
+        <div class="app-hero__meta">
+          <span class="badge badge--dev">In development</span>
+          <!-- Optional links. Copy as needed:
+          <a class="btn" href="https://apps.apple.com/app/…">View on the App Store</a>
+          <a class="btn btn--secondary" href="https://example.com">Visit website</a>
+          -->
+        </div>
+      </div>
+    </header>
+
+    <section class="detail-section" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="prose">
+        <p>Thinktrace is an iOS voice-notes app. Record voice memos, then ask questions about what you said and get answers drawn from your own recordings.</p>
+        <p>Recordings are transcribed on-device with Apple&rsquo;s SpeechAnalyzer. Questions go to a Python/FastAPI backend, where a LangGraph agent pipeline &mdash; a router, a retriever, and an answer composer &mdash; searches your notes using Amazon Bedrock Titan Text Embeddings V2 and PostgreSQL with pgvector.</p>
+        <p>Answer quality is measured with an eval suite built on a golden Q&amp;A set, and the app is tested with Swift Testing.</p>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="stack-title">
+      <h2 id="stack-title">Tech stack</h2>
+
+      <div class="stack-group">
+        <h3>iOS</h3>
+        <ul class="chips">
+          <li>SwiftUI</li>
+          <li>MVVM</li>
+          <li>Apple SpeechAnalyzer</li>
+          <li>Swift Testing</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h3>Backend &amp; AI</h3>
+        <ul class="chips">
+          <li>Python</li>
+          <li>FastAPI</li>
+          <li>LangGraph</li>
+          <li>Amazon Bedrock Titan Text Embeddings V2</li>
+          <li>PostgreSQL</li>
+          <li>pgvector</li>
+          <li>Eval suite (golden Q&amp;A)</li>
+        </ul>
+      </div>
+
+      <div class="stack-group">
+        <h3>Infrastructure</h3>
+        <ul class="chips">
+          <li>AWS RDS</li>
+          <li>AWS ECS</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Screenshots: add one <li> per file in assets/screens/thinktrace/.
+         This section hides itself (CSS :has) while it contains no images,
+         and any image that fails to load removes itself. Example:
+         <li><img src="../assets/screens/thinktrace/01.png" alt="Describe the screen" width="1179" height="2556" loading="lazy" onerror="this.parentElement.remove()"></li>
+    -->
+    <section class="detail-section screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">Screenshots</h2>
+      <ul class="screens__row">
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <!-- TODO: replace placeholder email -->
+      <a href="mailto:you@example.com">Contact</a>
+      <p>&copy; 2026 BBG Studios LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

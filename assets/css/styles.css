@@ -1,0 +1,638 @@
+/* ==========================================================================
+   brendangaynor.com — shared styles
+   Mobile-first. Dark is the primary design; light mode overrides tokens.
+   ========================================================================== */
+
+/* ---------- Tokens ---------- */
+:root {
+  color-scheme: dark light;
+
+  --bg: #0b0b0f;
+  --bg-elev: #15151c;
+  --bg-elev-2: #1e1e27;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #f4f4f7;
+  --text-muted: #a1a1ad;      /* 7.6:1 on --bg */
+  --text-faint: #8a8a96;      /* 5.6:1 on --bg */
+  --focus: #8ab4ff;
+  --todo-bg: rgba(255, 196, 0, 0.12);
+  --todo-text: #ffd257;
+
+  --live: #34c759;
+  --live-bg: rgba(52, 199, 89, 0.14);
+  --dev: #ffb340;
+  --dev-bg: rgba(255, 179, 64, 0.14);
+
+  --accent: #8b6cf6;          /* overridden per app */
+
+  --radius: 18px;
+  --radius-sm: 10px;
+  --gutter: max(20px, env(safe-area-inset-left));
+  --gutter-r: max(20px, env(safe-area-inset-right));
+  --maxw: 1040px;
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f5f5f7;
+    --bg-elev: #ffffff;
+    --bg-elev-2: #ececf0;
+    --border: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.16);
+    --text: #1d1d1f;
+    --text-muted: #55555e;
+    --text-faint: #6e6e78;
+    --focus: #0a66d8;
+    --todo-bg: rgba(255, 170, 0, 0.18);
+    --todo-text: #7a4b00;
+
+    --live: #1a7f37;
+    --live-bg: rgba(26, 127, 55, 0.1);
+    --dev: #9a5800;
+    --dev-bg: rgba(154, 88, 0, 0.1);
+  }
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem; /* 17px, iOS body size */
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  z-index: 10;
+  padding: 10px 14px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: max(12px, env(safe-area-inset-top));
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--maxw) + 40px);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter-r);
+}
+
+/* Clearly-marked placeholder copy */
+.todo {
+  background: var(--todo-bg);
+  color: var(--todo-text);
+  border-radius: 4px;
+  padding: 0 4px;
+  font-style: normal;
+}
+
+/* ---------- Hero (homepage) ---------- */
+.hero {
+  padding-top: max(64px, calc(env(safe-area-inset-top) + 40px));
+  padding-bottom: 40px;
+}
+
+.hero__name {
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  font-weight: 700;
+}
+
+.hero__title {
+  margin: 10px 0 0;
+  font-size: clamp(1.125rem, 3.6vw, 1.375rem);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hero__intro {
+  margin: 20px 0 0;
+  max-width: 34em;
+  color: var(--text-muted);
+}
+
+/* ---------- Section headings ---------- */
+.section {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.section__title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 16px;
+}
+
+/* ---------- App grid ---------- */
+.app-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 560px) {
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 900px) {
+  .app-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  padding: 16px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.18s ease, border-color 0.18s ease,
+    background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Stacked layout on wider screens: icon on top */
+@media (min-width: 560px) {
+  .tile {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+}
+
+.tile:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background: color-mix(in srgb, var(--accent) 7%, var(--bg-elev));
+  box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--accent) 45%, transparent);
+  transform: translateY(-2px);
+}
+
+.tile:active {
+  transform: scale(0.98);
+}
+
+.tile:focus-visible {
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+.tile__body {
+  min-width: 0;
+  flex: 1;
+}
+
+.tile__name {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.tile__tagline {
+  display: block;
+  margin: 2px 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.tile__chevron {
+  flex: none;
+  width: 8px;
+  height: 14px;
+  color: var(--text-faint);
+}
+
+@media (min-width: 560px) {
+  .tile__chevron {
+    display: none;
+  }
+}
+
+/* ---------- App icon (iOS-style rounded square) ---------- */
+.app-icon {
+  --size: 64px;
+  position: relative;
+  flex: none;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 22.37%; /* iOS icon corner ratio */
+  overflow: hidden;
+  background: var(--bg-elev-2);
+  box-shadow: 0 0 0 1px var(--border), 0 4px 14px -6px rgba(0, 0, 0, 0.5);
+}
+
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fallback when an icon file is missing: show the data-initial letters */
+.app-icon--missing {
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--accent) 35%, var(--bg-elev-2));
+}
+
+.app-icon--missing img {
+  display: none;
+}
+
+.app-icon--missing::after {
+  content: attr(data-initial);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: calc(var(--size) * 0.38);
+  color: #fff;
+}
+
+.app-icon--lg {
+  --size: 112px;
+}
+
+@media (min-width: 560px) {
+  .app-icon--lg {
+    --size: 140px;
+  }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 28px;
+  padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 16px));
+  font-size: 0.9375rem;
+  color: var(--text-faint);
+}
+
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.site-footer a:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- Detail page ---------- */
+.topbar {
+  padding-top: max(16px, env(safe-area-inset-top));
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding-right: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link svg {
+  width: 9px;
+  height: 16px;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+.app-hero {
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+}
+
+/* Soft accent glow behind the hero */
+.app-hero::before {
+  content: "";
+  position: absolute;
+  inset: -80px auto auto -40px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--accent) 28%, transparent),
+    transparent
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (min-width: 560px) {
+  .app-hero {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 28px;
+    padding-top: 40px;
+  }
+}
+
+.app-hero__name {
+  font-size: clamp(2rem, 7vw, 3rem);
+  font-weight: 700;
+}
+
+.app-hero__tagline {
+  margin: 8px 0 0;
+  font-size: clamp(1.0625rem, 3.4vw, 1.25rem);
+  color: var(--text-muted);
+}
+
+.app-hero__meta {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ---------- Status badge ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.badge--live {
+  color: var(--live);
+  background: var(--live-bg);
+}
+
+.badge--dev {
+  color: var(--dev);
+  background: var(--dev-bg);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--secondary {
+  background: var(--bg-elev-2);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+/* ---------- Detail content blocks ---------- */
+.detail-section {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.detail-section h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.prose {
+  max-width: 40em;
+  color: var(--text-muted);
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.stack-group + .stack-group {
+  margin-top: 18px;
+}
+
+.stack-group h3 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips li {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+/* ---------- Screenshots ---------- */
+/* Hidden entirely when it contains no images (e.g. folder still empty). */
+.screens:not(:has(img)) {
+  display: none;
+}
+
+.screens__row {
+  list-style: none;
+  margin: 0 calc(var(--gutter-r) * -1) 0 calc(var(--gutter) * -1);
+  padding: 4px var(--gutter-r) 12px var(--gutter);
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--gutter);
+  -webkit-overflow-scrolling: touch;
+}
+
+.screens__row li {
+  flex: none;
+  width: min(62vw, 260px);
+  scroll-snap-align: start;
+}
+
+.screens__row img {
+  width: 100%;
+  aspect-ratio: 1179 / 2556; /* iPhone 6.1"/6.7" portrait */
+  object-fit: cover;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+/* ---------- 404 ---------- */
+.not-found {
+  padding-top: max(96px, calc(env(safe-area-inset-top) + 64px));
+  padding-bottom: 64px;
+}
+
+.not-found h1 {
+  font-size: clamp(2.25rem, 8vw, 3.5rem);
+  font-weight: 700;
+}
+
+.not-found p {
+  margin-top: 12px;
+  color: var(--text-muted);
+}
+
+.not-found .btn {
+  margin-top: 24px;
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .tile:hover,
+  .tile:active,
+  .btn:active {
+    transform: none;
+  }
+}
