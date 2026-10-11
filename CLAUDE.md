@@ -28,11 +28,11 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 
 | # | Name | Slug | Status | Accent |
 |---|------|------|--------|--------|
-| 1 | Thinktrace | `thinktrace` | In development | Purple (from icon) |
-| 2 | iDetail | `idetail` | [TODO] | [TODO] |
-| 3 | Cue | `cue` | [TODO] | [TODO] |
-| 4 | BeatingU: Vision Challenge | `beatingu-vision` | On the App Store | Blue |
-| 5 | BeatingU: Running Challenge | `beatingu-running` | In development | Orange |
+| 1 | Thinktrace | `thinktrace` | In development | Purple `#8b6cf6` (from icon) |
+| 2 | iDetail | `idetail` | [TODO] | Teal `#2fa8c4` (from icon) |
+| 3 | Cue | `cue` | [TODO] | Magenta `#e2156d` (from icon) |
+| 4 | BeatingU: Vision Challenge | `beatingu-vision` | On the App Store | Blue `#0a84ff` |
+| 5 | BeatingU: Running Challenge | `beatingu-running` | In development | Orange `#ff9f0a` |
 | 6 | Fit Tunes | `fittunes` | [TODO] | [TODO] |
 
 ### Source content (only facts we have — do not embellish)
@@ -61,10 +61,9 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 5. Tech stack: chips (`.chips`), optionally grouped
 6. Screenshots (`.screens`): list `<img>` tags for files in `assets/screens/<slug>/`. The section hides itself via CSS `:has()` when it contains no images, and each `<img>` removes itself on load error — so an empty or missing folder never shows a broken section.
 
-## Missing assets (as of first commit)
+## Missing assets
 
-- `assets/icons/idetail.png` is not present yet — the homepage tile shows a lettered fallback until it's added.
-- `assets/icons/cue.png` is currently a byte-identical copy of `thinktrace.png` — needs the real Cue icon.
+- None — all 6 icons are present. Screenshot folders are still empty.
 
 ## Workflow
 
