@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cue — Brendan Gaynor</title>
+  <meta name="description" content="Cue is a branded concierge platform: scan, tap, and get help instantly.">
+  <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body style="--accent: #e2156d">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="topbar container" aria-label="Breadcrumb">
+    <a class="back-link" href="../index.html">
+      <svg width="9" height="16" viewBox="0 0 9 16" aria-hidden="true"><path d="M8 1L1 8l7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All apps
+    </a>
+  </nav>
+
+  <main id="main" class="container">
+    <header class="app-hero">
+      <span class="app-icon app-icon--lg" data-initial="C">
+        <img src="../assets/icons/cue.png" alt="Cue app icon" width="140" height="140" onerror="this.parentElement.classList.add('app-icon--missing')">
+      </span>
+      <div>
+        <h1 class="app-hero__name">Cue</h1>
+        <p class="app-hero__tagline">A branded concierge platform: scan, tap, and get help instantly</p>
+        <p class="app-hero__role">Built at Thingee Corporation &middot; 2022&ndash;present</p>
+        <p class="app-hero__platforms"><span class="visually-hidden">Platforms: </span>iPhone</p>
+        <div class="app-hero__meta">
+          <span class="badge badge--live">Live on the App Store</span>
+        </div>
+        <div class="app-hero__actions">
+          <a class="store-badge" href="https://apps.apple.com/us/app/hello-cue/id1633484850" target="_blank" rel="noopener">
+            <img src="../assets/badges/app-store-badge.svg" alt="Download on the App Store" height="44" onerror="this.parentElement.classList.add('store-badge--missing')">
+            <span class="store-badge__fallback">Download on the App Store</span>
+          </a>
+          <a class="btn btn--secondary" href="https://hellocue.io" target="_blank" rel="noopener">Visit hellocue.io</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="detail-section" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="prose">
+        <p>Cue is a personalized concierge platform that connects businesses with their customers. Users scan a QR code, tap an NFC tag, or follow a private link and are routed straight to what they need: on-demand support, information, guided training, scheduling a call, or placing an order. It&rsquo;s fully brandable and works without requiring an app download.</p>
+        <p>AI triages incoming requests and gives instant answers, then hands off to a real person when needed. An AI Voice feature, powered by ElevenLabs and Bland.ai, lets customers talk to Cue naturally. Cue adapts to different industries, including pharma, hospitality, retail, and finance.</p>
+        <p>I built and maintain the iOS app, first released in 2022 and now on version 2.4. Work includes AI-driven request triage, the AI Voice integration, a bidirectional WKWebView JavaScript bridge between native and web content, timezone-aware meeting scheduling, and API integrations for routing.</p>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="stack-title">
+      <h2 id="stack-title">Tech stack</h2>
+      <ul class="chips">
+        <li>Swift</li>
+        <li>Objective-C</li>
+        <li>UIKit</li>
+        <li>Core Data</li>
+        <li>Grand Central Dispatch (GCD)</li>
+        <li>REST API integration</li>
+        <li>ElevenLabs</li>
+        <li>Bland.ai</li>
+        <li>WKWebView JavaScript bridge</li>
+        <li>AI triage</li>
+        <li>AI Voice</li>
+        <li>App Store distribution</li>
+      </ul>
+    </section>
+
+    <!-- Screenshots: add one <li> per file in assets/screens/cue/.
+         This section hides itself (CSS :has) while it contains no images. Example:
+         <li><img src="../assets/screens/cue/01.png" alt="Describe the screen" width="1179" height="2556" loading="lazy" onerror="this.parentElement.remove()"></li>
+    -->
+    <section class="detail-section screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">Screenshots</h2>
+      <ul class="screens__row">
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a href="mailto:you@example.com">Contact</a>
+      <p>&copy; 2026 BBG Studios LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

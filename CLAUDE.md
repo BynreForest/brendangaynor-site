@@ -19,6 +19,7 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 /assets/css/styles.css   shared styles
 /assets/icons/<slug>.png app icons (1024×1024 source PNGs, provided)
 /assets/screens/<slug>/  screenshots (may be empty)
+/assets/badges/          official store badges (Apple artwork — never recreate or restyle)
 /404.html
 ```
 
@@ -29,8 +30,8 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 | # | Name | Slug | Status | Accent |
 |---|------|------|--------|--------|
 | 1 | Thinktrace | `thinktrace` | In development | Purple `#8b6cf6` (from icon) |
-| 2 | iDetail | `idetail` | [TODO] | Teal `#2fa8c4` (from icon) |
-| 3 | Cue | `cue` | [TODO] | Magenta `#e2156d` (from icon) |
+| 2 | iDetail | `idetail` | Live on the App Store | Teal `#2fa8c4` (from icon) |
+| 3 | Cue | `cue` | Live on the App Store | Magenta `#e2156d` (from icon) |
 | 4 | BeatingU: Vision Challenge | `beatingu-vision` | On the App Store | Blue `#0a84ff` |
 | 5 | BeatingU: Running Challenge | `beatingu-running` | In development | Orange `#ff9f0a` |
 | 6 | Fit Tunes | `fittunes` | [TODO] | [TODO] |
@@ -38,8 +39,8 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 ### Source content (only facts we have — do not embellish)
 
 - **Thinktrace** — iOS voice-notes app: record voice memos, then ask questions about their content. Stack: SwiftUI, MVVM, Apple SpeechAnalyzer (on-device transcription), Python/FastAPI, LangGraph agents (router, retriever, answer composer), PostgreSQL + pgvector, AWS (RDS, ECS), Amazon Bedrock Titan Text Embeddings V2, eval suite with golden Q&A set, Swift Testing. Status: in development.
-- **iDetail** — iOS and web sales-enablement app for pharma sales reps. Website: https://idetailapp.com. Stack: [TODO].
-- **Cue** — AI voice agent platform; deployed as a conversational AI kiosk at pharma conferences (directional cardioid mic + push-to-talk). Stack: ElevenLabs Conversational AI, Bland.ai, WKWebView with a bidirectional JS bridge, [TODO: rest]. Website: https://hellocue.app.
+- **iDetail** — ✅ page done (`apps/idetail.html`), content supplied verbatim by Brendan. Tagline: "Content delivery and sales enablement for life science teams". Role: iOS Lead at Thingee Corporation · 10+ years. Platforms: iPad · Mac (Apple silicon) · Apple Vision Pro. App Store: https://apps.apple.com/us/app/idetail/id1015090368. Website: https://idetailapp.com (not linked on the page yet).
+- **Cue** — ✅ page done (`apps/cue.html`), content supplied verbatim by Brendan. Tagline: "A branded concierge platform: scan, tap, and get help instantly". Role: Built at Thingee Corporation · 2022–present. Platforms: iPhone. App Store: https://apps.apple.com/us/app/hello-cue/id1633484850. Website: https://hellocue.io (supersedes the earlier hellocue.app).
 - **BeatingU: Vision Challenge** — visual-skills game: a "20/20 Sprint" of shrinking Landolt C rings; tap the direction of the gap; compete via Game Center leaderboards and challenges. Stack: SwiftUI, GameKit/Game Center. Status: on the App Store [TODO: App Store link]. Blue accent.
 - **BeatingU: Running Challenge** — timed runs (0.5–10 mi) with Game Center leaderboards and real-time head-to-head racing. Stack: SwiftUI, MVVM, Core Location (background), GameKit/Game Center. Status: in development. Orange accent.
 - **Fit Tunes** — [TODO: description, stack, status].
@@ -55,15 +56,31 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 `apps/thinktrace.html` is the reference template. Every detail page has, in order:
 
 1. Back link to `../index.html`
-2. Hero: large icon, app name (`h1`), tagline, status badge (`badge--live` for "On the App Store", `badge--dev` for "In development")
-3. Optional App Store / website button(s) (`.btn`) — omit if none
+2. Hero: large icon, app name (`h1`), tagline, optional role line (`.app-hero__role`) and platforms line (`.app-hero__platforms`), status badge (`badge--live` for live apps, `badge--dev` for "In development")
+3. Optional App Store badge / website button(s) in `.app-hero__actions` — omit if none
 4. About: 2–3 short paragraphs
 5. Tech stack: chips (`.chips`), optionally grouped
 6. Screenshots (`.screens`): list `<img>` tags for files in `assets/screens/<slug>/`. The section hides itself via CSS `:has()` when it contains no images, and each `<img>` removes itself on load error — so an empty or missing folder never shows a broken section.
 
+### App Store badge
+
+Reusable pattern (see `apps/idetail.html`). Change only the `href`:
+
+```html
+<div class="app-hero__actions">
+  <a class="store-badge" href="https://apps.apple.com/us/app/…" target="_blank" rel="noopener">
+    <img src="../assets/badges/app-store-badge.svg" alt="Download on the App Store" height="44" onerror="this.parentElement.classList.add('store-badge--missing')">
+    <span class="store-badge__fallback">Download on the App Store</span>
+  </a>
+</div>
+```
+
+The badge renders at 44px tall (Apple minimum is 40px) with ¼-height clear space. If the SVG is missing, the link falls back to a plain text button.
+
 ## Missing assets
 
-- None — all 6 icons are present. Screenshot folders are still empty.
+- `assets/badges/app-store-badge.svg` — not added yet (get it from Apple's App Store marketing guidelines page). Pages show the text fallback until it exists.
+- All 6 icons are present. Screenshot folders are still empty.
 
 ## Workflow
 
