@@ -50,9 +50,8 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 ## Content rules
 
 - **Never invent** features, metrics, users, awards, or claims. Where information is missing, write a visible placeholder like `[TODO: description]` wrapped in `<span class="todo">…</span>` so it stands out on the page.
-- Contact email is a placeholder (`you@example.com`) until Brendan provides the real one.
+- Contact email: gaynorbrendan@gmail.com (footer Contact link on every page + Fit Tunes privacy policy).
 - Footer: `nav.footer-links` (Contact + Privacy → `privacy/fittunes.html`, relative to the page's folder; `/privacy/fittunes.html` in 404.html) + `© BBG Studios LLC`.
-- The Fit Tunes privacy policy's contact also uses the placeholder email — replace it there too (App Store review expects a working contact).
 
 ## Detail page template
 
