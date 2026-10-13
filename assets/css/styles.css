@@ -751,6 +751,65 @@ a {
   margin-top: 24px;
 }
 
+/* ---------- Footer links ---------- */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+}
+
+/* ---------- Small inline text link (e.g. "Privacy Policy") ---------- */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 3px;
+}
+
+.text-link:hover {
+  color: var(--text);
+  text-decoration-color: currentColor;
+}
+
+/* ---------- Document pages (privacy policies) ---------- */
+.doc {
+  padding-top: 24px;
+  padding-bottom: 56px;
+}
+
+.doc__header {
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.doc__header h1 {
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  font-weight: 700;
+}
+
+.doc__meta {
+  margin: 8px 0 0;
+  font-size: 0.9375rem;
+  color: var(--text-faint);
+}
+
+.doc h2 {
+  margin: 28px 0 8px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.doc .prose a {
+  color: var(--text);
+  text-underline-offset: 3px;
+}
+
 /* ---------- Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,

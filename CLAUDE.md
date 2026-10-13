@@ -20,6 +20,7 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 /assets/icons/<slug>.png app icons (1024×1024 source PNGs, provided)
 /assets/screens/<slug>/  screenshots (may be empty)
 /assets/badges/          official store badges (Apple artwork — never recreate or restyle)
+/privacy/<slug>.html     per-app privacy policies (document layout: .doc)
 /404.html
 ```
 
@@ -34,7 +35,7 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 | 3 | Cue | `cue` | Live on the App Store | Magenta `#e2156d` (from icon) |
 | 4 | BeatingU: Vision Challenge | `beatingu-vision` | Live on the App Store | Blue `#0a84ff` |
 | 5 | BeatingU: Running Challenge | `beatingu-running` | In development | Orange `#ff9f0a` |
-| 6 | Fit Tunes | `fittunes` | [TODO] | [TODO] |
+| 6 | Fit Tunes | `fittunes` | Live on the App Store | Blue `#3333ff` (from icon) |
 
 ### Source content (only facts we have — do not embellish)
 
@@ -44,13 +45,14 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 - **BeatingU family** — Brendan's own product line of competitive iOS games (designed and built by him, under BBG Studios), sharing one brand: coin/rim icon treatment with an app-specific inner glyph. Website: https://beatingu.com. Each BeatingU page has a "More from BeatingU" link (`aside.related` with a `.tile.tile--row`) to its sibling, and uses `badge--accent` + `chips--accent` so its own accent tints the badge and chips.
 - **BeatingU: Vision Challenge** — ✅ page done (`apps/beatingu-vision.html`), content supplied verbatim by Brendan. Tagline: "A visual-acuity game. Beat your friends to 20/20." Role: Designed & built by Brendan Gaynor · BBG Studios. Platforms: iPhone. Live on the App Store: https://apps.apple.com/us/app/beatingu-vision-challenge/id6804060890. Blue accent.
 - **BeatingU: Running Challenge** — ✅ page done (`apps/beatingu-running.html`), content supplied verbatim by Brendan. Tagline: "Timed runs, live leaderboards, and real-time head-to-head racing." Role: Designed & built by Brendan Gaynor · BBG Studios. Platforms: iPhone. In development — no App Store link yet; shows a `.store-pending` "Coming soon to the App Store" label in place of the badge. Orange accent.
-- **Fit Tunes** — [TODO: description, stack, status].
+- **Fit Tunes** — ✅ page done (`apps/fittunes.html`), content supplied verbatim by Brendan. Tagline: "Playlists, no more notecards!" Role: Designed & built by Brendan Gaynor · 2016–present. Platforms: iPhone · Mac (Apple silicon) · Apple Vision Pro. App Store: https://apps.apple.com/app/id1079651034. Tech chips (Swift, UIKit, MediaPlayer framework, Dark Mode, App Store distribution) were confirmed by Brendan. Has a privacy policy at `privacy/fittunes.html` (publisher: BBG Studios LLC, formerly Mixed Media LLC; last updated October 2026) linked from the hero via `.text-link`.
 
 ## Content rules
 
 - **Never invent** features, metrics, users, awards, or claims. Where information is missing, write a visible placeholder like `[TODO: description]` wrapped in `<span class="todo">…</span>` so it stands out on the page.
 - Contact email is a placeholder (`you@example.com`) until Brendan provides the real one.
-- Footer: contact link + `© BBG Studios LLC`.
+- Footer: `nav.footer-links` (Contact + Privacy → `privacy/fittunes.html`, relative to the page's folder; `/privacy/fittunes.html` in 404.html) + `© BBG Studios LLC`.
+- The Fit Tunes privacy policy's contact also uses the placeholder email — replace it there too (App Store review expects a working contact).
 
 ## Detail page template
 
