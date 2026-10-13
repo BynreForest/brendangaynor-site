@@ -83,6 +83,13 @@ The badge renders at 44px tall (Apple minimum is 40px) with ¼-height clear spac
 
 - All 6 icons are present. Screenshot folders are still empty.
 
+## Deployment (Cloudflare Workers static assets)
+
+- GitHub: https://github.com/BynreForest/brendangaynor-site (public, branch `main`). Commits use gaynorbrendan@gmail.com (set in this repo's local git config) — never the Thingee work email.
+- Cloudflare Workers Builds deploys every push to `main` with `npx wrangler deploy` (no build command). Config: `wrangler.jsonc` serves the repo root as static assets, `not_found_handling: "404-page"` (unknown URLs get `404.html`), `html_handling: "auto-trailing-slash"` (`/apps/cue.html` is served at `/apps/cue`).
+- `.assetsignore` keeps repo-only files off the live site (`CLAUDE.md`, `.claude/`, `wrangler.jsonc`, `.gitignore`, `.git/`, `.gitkeep`). **Any new non-public file at the repo root must be added there.**
+- Don't add `package.json` — Workers Builds runs Wrangler via `npx` without it.
+
 ## Workflow
 
 - Preview: `python3 -m http.server 8000` from the repo root, then http://localhost:8000 — or just open `index.html`. (In the Claude desktop app, `.claude/launch.json` attaches the Browser pane to that server; start the server from a shell first, since the launcher lacks Desktop folder access.)

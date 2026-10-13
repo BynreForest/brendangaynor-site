@@ -1,0 +1,15 @@
+# Files in the repo that must NOT be published to brendangaynor.com.
+# (Same syntax as .gitignore.)
+
+# Project notes and tooling
+CLAUDE.md
+.claude/
+wrangler.jsonc
+.assetsignore
+.gitignore
+.wrangler/
+
+# Git and OS junk
+.git/
+.DS_Store
+**/.gitkeep

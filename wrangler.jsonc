@@ -1,0 +1,14 @@
+// Cloudflare Workers static-assets deployment for brendangaynor.com.
+// No build step: the repo root is served as-is, minus what .assetsignore excludes.
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "brendangaynor-site",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": ".",
+    // Unknown URLs get /404.html with a real 404 status.
+    "not_found_handling": "404-page",
+    // /apps/cue.html is served at /apps/cue (old .html links redirect there).
+    "html_handling": "auto-trailing-slash"
+  }
+}
