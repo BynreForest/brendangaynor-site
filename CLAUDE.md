@@ -78,11 +78,10 @@ Reusable pattern (see `apps/idetail.html`). Change only the `href`:
 </div>
 ```
 
-The badge renders at 44px tall (Apple minimum is 40px) with ¼-height clear space. If the SVG is missing, the link falls back to a plain text button.
+The badge renders at 44px tall (Apple minimum is 40px) with ¼-height clear space. If the SVG is missing, the link falls back to a plain text button. The file in the repo is Apple's official white US-UK badge (`Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917`), unmodified.
 
 ## Missing assets
 
-- `assets/badges/app-store-badge.svg` — not added yet (get it from Apple's App Store marketing guidelines page). Pages show the text fallback until it exists.
 - All 6 icons are present. Screenshot folders are still empty.
 
 ## Workflow
