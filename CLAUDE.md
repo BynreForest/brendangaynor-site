@@ -32,7 +32,7 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 | 1 | Thinktrace | `thinktrace` | In development | Purple `#8b6cf6` (from icon) |
 | 2 | iDetail | `idetail` | Live on the App Store | Teal `#2fa8c4` (from icon) |
 | 3 | Cue | `cue` | Live on the App Store | Magenta `#e2156d` (from icon) |
-| 4 | BeatingU: Vision Challenge | `beatingu-vision` | On the App Store | Blue `#0a84ff` |
+| 4 | BeatingU: Vision Challenge | `beatingu-vision` | Live on the App Store | Blue `#0a84ff` |
 | 5 | BeatingU: Running Challenge | `beatingu-running` | In development | Orange `#ff9f0a` |
 | 6 | Fit Tunes | `fittunes` | [TODO] | [TODO] |
 
@@ -41,8 +41,9 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 - **Thinktrace** — iOS voice-notes app: record voice memos, then ask questions about their content. Stack: SwiftUI, MVVM, Apple SpeechAnalyzer (on-device transcription), Python/FastAPI, LangGraph agents (router, retriever, answer composer), PostgreSQL + pgvector, AWS (RDS, ECS), Amazon Bedrock Titan Text Embeddings V2, eval suite with golden Q&A set, Swift Testing. Status: in development.
 - **iDetail** — ✅ page done (`apps/idetail.html`), content supplied verbatim by Brendan. Tagline: "Content delivery and sales enablement for life science teams". Role: iOS Lead at Thingee Corporation · 10+ years. Platforms: iPad · Mac (Apple silicon) · Apple Vision Pro. App Store: https://apps.apple.com/us/app/idetail/id1015090368. Website: https://idetailapp.com (not linked on the page yet).
 - **Cue** — ✅ page done (`apps/cue.html`), content supplied verbatim by Brendan. Tagline: "A branded concierge platform: scan, tap, and get help instantly". Role: Built at Thingee Corporation · 2022–present. Platforms: iPhone. App Store: https://apps.apple.com/us/app/hello-cue/id1633484850. Website: https://hellocue.io (supersedes the earlier hellocue.app).
-- **BeatingU: Vision Challenge** — visual-skills game: a "20/20 Sprint" of shrinking Landolt C rings; tap the direction of the gap; compete via Game Center leaderboards and challenges. Stack: SwiftUI, GameKit/Game Center. Status: on the App Store [TODO: App Store link]. Blue accent.
-- **BeatingU: Running Challenge** — timed runs (0.5–10 mi) with Game Center leaderboards and real-time head-to-head racing. Stack: SwiftUI, MVVM, Core Location (background), GameKit/Game Center. Status: in development. Orange accent.
+- **BeatingU family** — Brendan's own product line of competitive iOS games (designed and built by him, under BBG Studios), sharing one brand: coin/rim icon treatment with an app-specific inner glyph. Website: https://beatingu.com. Each BeatingU page has a "More from BeatingU" link (`aside.related` with a `.tile.tile--row`) to its sibling, and uses `badge--accent` + `chips--accent` so its own accent tints the badge and chips.
+- **BeatingU: Vision Challenge** — ✅ page done (`apps/beatingu-vision.html`), content supplied verbatim by Brendan. Tagline: "A visual-acuity game. Beat your friends to 20/20." Role: Designed & built by Brendan Gaynor · BBG Studios. Platforms: iPhone. Live on the App Store: https://apps.apple.com/us/app/beatingu-vision-challenge/id6804060890. Blue accent.
+- **BeatingU: Running Challenge** — ✅ page done (`apps/beatingu-running.html`), content supplied verbatim by Brendan. Tagline: "Timed runs, live leaderboards, and real-time head-to-head racing." Role: Designed & built by Brendan Gaynor · BBG Studios. Platforms: iPhone. In development — no App Store link yet; shows a `.store-pending` "Coming soon to the App Store" label in place of the badge. Orange accent.
 - **Fit Tunes** — [TODO: description, stack, status].
 
 ## Content rules
@@ -56,8 +57,8 @@ Personal portfolio for Brendan Gaynor — iOS/Swift developer and founder of BBG
 `apps/thinktrace.html` is the reference template. Every detail page has, in order:
 
 1. Back link to `../index.html`
-2. Hero: large icon, app name (`h1`), tagline, optional role line (`.app-hero__role`) and platforms line (`.app-hero__platforms`), status badge (`badge--live` for live apps, `badge--dev` for "In development")
-3. Optional App Store badge / website button(s) in `.app-hero__actions` — omit if none
+2. Hero: large icon, app name (`h1`), tagline, optional role line (`.app-hero__role`) and platforms line (`.app-hero__platforms`), status badge (`badge--live` for live apps, `badge--dev` for "In development", or `badge--accent` to use the page's accent)
+3. Optional App Store badge (or `.store-pending` label if not released yet) / website button(s) in `.app-hero__actions` — omit if none
 4. About: 2–3 short paragraphs
 5. Tech stack: chips (`.chips`), optionally grouped
 6. Screenshots (`.screens`): list `<img>` tags for files in `assets/screens/<slug>/`. The section hides itself via CSS `:has()` when it contains no images, and each `<img>` removes itself on load error — so an empty or missing folder never shows a broken section.

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BeatingU: Running Challenge — Brendan Gaynor</title>
+  <meta name="description" content="BeatingU: Running Challenge for iPhone: timed runs, live leaderboards, and real-time head-to-head racing.">
+  <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body style="--accent: #ff9f0a">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="topbar container" aria-label="Breadcrumb">
+    <a class="back-link" href="../index.html">
+      <svg width="9" height="16" viewBox="0 0 9 16" aria-hidden="true"><path d="M8 1L1 8l7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All apps
+    </a>
+  </nav>
+
+  <main id="main" class="container">
+    <header class="app-hero">
+      <span class="app-icon app-icon--lg" data-initial="BU">
+        <img src="../assets/icons/beatingu-running.png" alt="BeatingU: Running Challenge app icon" width="140" height="140" onerror="this.parentElement.classList.add('app-icon--missing')">
+      </span>
+      <div>
+        <h1 class="app-hero__name">BeatingU: Running Challenge</h1>
+        <p class="app-hero__tagline">Timed runs, live leaderboards, and real-time head-to-head racing.</p>
+        <p class="app-hero__role">Designed &amp; built by Brendan Gaynor &middot; BBG Studios</p>
+        <p class="app-hero__platforms"><span class="visually-hidden">Platforms: </span>iPhone</p>
+        <div class="app-hero__meta">
+          <span class="badge badge--accent">In development</span>
+        </div>
+        <div class="app-hero__actions">
+          <span class="store-pending">Coming soon to the App Store</span>
+          <a class="btn btn--secondary" href="https://beatingu.com" target="_blank" rel="noopener">Visit beatingu.com</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="detail-section" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="prose">
+        <p>BeatingU: Running Challenge brings the BeatingU competitive format to running. Players run timed distances of 0.5, 1, 2, 3, 5, or 10 miles, tracked with GPS that keeps working in the background, and post their times to Game Center leaderboards.</p>
+        <p>Beyond solo runs, version 1 includes real-time head-to-head racing, so two runners can race each other live, wherever they are.</p>
+        <p>It shares Vision Challenge&rsquo;s design language with an orange color scheme, and is built on an MVVM architecture with an AI-assisted workflow using Claude Code.</p>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="stack-title">
+      <h2 id="stack-title">Tech stack</h2>
+      <ul class="chips chips--accent">
+        <li>Swift</li>
+        <li>SwiftUI</li>
+        <li>MVVM</li>
+        <li>Core Location (background location)</li>
+        <li>GameKit / Game Center</li>
+        <li>Game Center Leaderboards</li>
+        <li>Real-time multiplayer</li>
+        <li>Claude Code (AI-assisted development)</li>
+      </ul>
+    </section>
+
+    <!-- Screenshots: add one <li> per file in assets/screens/beatingu-running/.
+         This section hides itself (CSS :has) while it contains no images. Example:
+         <li><img src="../assets/screens/beatingu-running/01.png" alt="Describe the screen" width="1179" height="2556" loading="lazy" onerror="this.parentElement.remove()"></li>
+    -->
+    <section class="detail-section screens" aria-labelledby="screens-title">
+      <h2 id="screens-title">Screenshots</h2>
+      <ul class="screens__row">
+      </ul>
+    </section>
+
+    <aside class="related" aria-labelledby="related-title">
+      <h2 id="related-title" class="section__title">More from BeatingU</h2>
+      <a class="tile tile--row" href="beatingu-vision.html" style="--accent: #0a84ff">
+        <span class="app-icon" data-initial="BU">
+          <img src="../assets/icons/beatingu-vision.png" alt="" width="64" height="64" loading="lazy" onerror="this.parentElement.classList.add('app-icon--missing')">
+        </span>
+        <span class="tile__body">
+          <span class="tile__name">BeatingU: Vision Challenge</span>
+          <span class="tile__tagline">A visual-acuity game. Beat your friends to 20/20.</span>
+        </span>
+        <svg class="tile__chevron" width="8" height="14" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a href="mailto:you@example.com">Contact</a>
+      <p>&copy; 2026 BBG Studios LLC</p>
+    </div>
+  </footer>
+</body>
+</html>
